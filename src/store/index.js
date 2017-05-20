@@ -4,7 +4,12 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
-  apiUrl: ''
+  apiUrl: '',
+  mainData:{
+    routes:'',
+    apiUrl:'',
+    config:'',
+  },
 }
 export default new Vuex.Store({
   state
