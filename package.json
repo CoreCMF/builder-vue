@@ -1,0 +1,23 @@
+{
+  "name": "builder-vue",
+  "version": "1.0.3",
+  "description": "自动构建vue页面\"",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CoreCMF/builder-vue.git"
+  },
+  "keywords": [
+    "vue",
+    "builder"
+  ],
+  "author": "bigRcos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CoreCMF/builder-vue/issues"
+  },
+  "homepage": "https://github.com/CoreCMF/builder-vue#readme"
+}
