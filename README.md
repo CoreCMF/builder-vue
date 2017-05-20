@@ -16,11 +16,15 @@ import builderVueIview from 'builder-vue-iview'
 import Axios from 'axios'
 
 Vue.use(builderVueIview)
-
-Vue.config.productionTip = false
 Vue.prototype.$http = Axios
+
 /* 设置api通信url */
 store.state.apiUrl = window.config.apiUrl
+/* 容器组件 */
+store.state.container = ''
+/* builder索引组件 */
+store.state.builderIndex = '<Bvi-index></Bvi-index>'
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
@@ -28,6 +32,7 @@ new Vue({
   store,
   render: h => h(App)
 })
+
 ```
 ## 数据结构（必须）（store.state.apiUrl返回的数据结构JOSN）
 1、routes 数组(其中包括三个元素)
@@ -42,8 +47,8 @@ new Vue({
 ```
 {
   "routes":[
-    {"name":"api.admin.dashboard.index","path":"/admin/dashboard","apiUrl":"http://corecmf.dev/api/admin/dashboard/dashboard"},
-    {"name":"api.admin.system.system","path":"/admin/system/system","apiUrl":"http://corecmf.dev/api/admin/system/system"}
+    {"name":"api.admin.dashboard.index",  "path":"/admin/dashboard",      "apiUrl":"http://corecmf.dev/api/admin/dashboard/dashboard"},
+    {"name":"api.admin.system.system",    "path":"/admin/system/system",  "apiUrl":"http://corecmf.dev/api/admin/system/system"}
   ],
   "config":{
     "homeRouterNmae":"api.admin.dashboard.index",

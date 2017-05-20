@@ -6,11 +6,17 @@ import * as actions from './actions'
 Vue.use(Vuex)
 
 const state = {
+  /* 设置api通信url */
   apiUrl: '',
+  /* 容器组件 */
+  container: '',
+  /* builder索引组件 */
+  builderIndex: '',
+  /* 后端主要配置数据 */
   mainData:{
-    routes:'',
-    apiUrl:'',
-    config:'',
+    routes: '',
+    apiUrl: '',
+    config: '',
   },
 }
 export default new Vuex.Store({
