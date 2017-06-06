@@ -27,7 +27,8 @@ export default {
         console.log('%c 服务端返回状态如下： ', 'background: #222; color: #bada55')
         console.log(error)
       }
-      this.$store.dispatch('getData',{ 'url':this.$store.state.apiUrl, thenFunction, catchFunction })
+      let apiUrl = this.$store.state.apiUrl
+      this.$store.dispatch('getData',{ 'url':apiUrl, thenFunction, catchFunction })
     },
     addRoutes(routesPro, config){
       let childrenRoutes = []
