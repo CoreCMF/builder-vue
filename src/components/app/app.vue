@@ -9,6 +9,7 @@ export default {
     this.initMainData()
   },
   methods: {
+    /* [initMainData 通过apiUrl通信获取数据] */
     initMainData () {
       this.$http.post(this.$store.state.apiUrl).then((Response) => {
         let mainData = Response.data
@@ -16,6 +17,11 @@ export default {
         this.$store.dispatch('setMainData',mainData)
         /* 初始化路由 */
         this.addRoutes(mainData.routes, mainData.config)
+      },(Response) => {
+        console.log('%c 获取主配置信息失败! ', 'background: #222; color: #bada55')
+        console.log('%c 请检查模板文件window.config.apiUrl配置参数是否正确,或者服务端是否通信正常。 ', 'background: #222; color: #bada55')
+        console.log('%c 服务端返回状态如下： ', 'background: #222; color: #bada55')
+        console.log(Response)
       })
     },
     addRoutes(routesPro, config){
