@@ -7,3 +7,17 @@ import * as types from './mutation-types'
 export const setMainData = ({ commit,state },mainData) => {
   commit(types.SET_MAIN_DATA,mainData)
 }
+
+export const getData = ({ commit,state },{url = state.apiUrl, postData = '', thenFunction = '', catchFunction = '', notification = true}) => {
+    window.axios.post(url,postData,{withCredentials:true})
+    .then((Response) => {
+      if (thenFunction) {
+        thenFunction(Response)
+      }
+    })
+    .catch(function (error) {
+      if (catchFunction) {
+        catchFunction(error)
+      }
+    })
+}
