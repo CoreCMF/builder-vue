@@ -18,6 +18,9 @@ const state = {
     apiUrl: '',
     config: '',
   },
+  api:{
+    sidebar: ''
+  }
 }
 export default new Vuex.Store({
   state,
