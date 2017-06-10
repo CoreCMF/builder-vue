@@ -5,6 +5,8 @@
 ## Build Setup
 ```
 npm install builder-vue -D
+npm install font-awesome -D
+
 ```
 ## 启动（下面以builder-vue-element自动构建为例）
 1、设置全局HTTP包Axios
