@@ -1,29 +1,34 @@
-# builder-vue-iview
+# builder-vue
 
 > a vue admin packages
 
 ## Build Setup
 ```
-npm install builder-vue-iview -D
+npm install builder-vue -D
 ```
-## 启动（下面以builder-vue-iview自动构建为例）
-1、设置HTTP包Axios
+## 启动（下面以builder-vue-element自动构建为例）
+1、设置全局HTTP包Axios
 2、设置通信地址apiUrl
+3、设置容器组件
+4、设置builder组件
 ```
 import Vue from 'vue'
 import {App, router, store} from 'builder-vue'
-import builderVueIview from 'builder-vue-iview'
-import Axios from 'axios'
+import ElementUI from 'element-ui'
+import BuilderVueElement from 'builder-vue-element'
+import ContainerVueElement from 'container-vue-element'
+window.axios = require('axios')
 
-Vue.use(builderVueIview)
-Vue.prototype.$http = Axios
+Vue.use(ElementUI)
+Vue.use(BuilderVueElement)
+Vue.use(ContainerVueElement)
 
 /* 设置api通信url */
 store.state.apiUrl = window.config.apiUrl
 /* 容器组件 */
-store.state.container = ''
+store.state.container = { template: '<cve-layout/>' }
 /* builder索引组件 */
-store.state.builderIndex = '<Bvi-index></Bvi-index>'
+store.state.builderIndex = { template: '<bve-index/>' }
 
 /* eslint-disable no-new */
 new Vue({
@@ -32,6 +37,7 @@ new Vue({
   store,
   render: h => h(App)
 })
+
 
 ```
 ## 数据结构（必须）（store.state.apiUrl返回的数据结构JOSN）
