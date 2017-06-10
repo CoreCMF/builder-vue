@@ -5,6 +5,7 @@
 ## Build Setup
 ```
 npm install builder-vue -D
+npm install axios -D
 npm install font-awesome -D
 
 ```
