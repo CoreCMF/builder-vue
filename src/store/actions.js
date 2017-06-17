@@ -7,17 +7,41 @@ import * as types from './mutation-types'
 export const setMainData = ({ commit,state },mainData) => {
   commit(types.SET_MAIN_DATA,mainData)
 }
+export const Notification = (notify, data) => {
+  data.duration = data.duration ? data.duration : 4500;  //设置自动取消时间
+  data.offset = data.offset ? data.offset : 100;  //设置位置偏移
+  notify({
+    title: data.title,
+    message: data.message,
+    type: data.type,
+    iconClass: data.iconClass,
+    customClass: data.customClass,
+    duration: data.duration,
+    onClose: data.onClose,
+    offset: data.offset,
+  })
+}
 /* 公共post请求方法 */
-export const getData = ({ commit,state },{apiUrl = state.apiUrl, postData = '', thenFunction = '', catchFunction = '', notification = true}) => {
+export const getData = ({ commit,state },{apiUrl = state.apiUrl, postData = null, thenFunction = null, catchFunction = null, notify = null}) => {
     window.axios.post(apiUrl,postData,{withCredentials:true})
     .then((Response) => {
       if (thenFunction) {
         thenFunction(Response)
       }
+      if (notify) {
+        Notification(notify, Response.data)
+      }
     })
     .catch(function (error) {
       if (catchFunction) {
         catchFunction(error)
+      }
+      if (notify) {
+        Notification(notify, {
+            title: '操作失败',
+            message: '操作失败请联系管理员！',
+            type: 'error',
+        })
       }
     })
 }
