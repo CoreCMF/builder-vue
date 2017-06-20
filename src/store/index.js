@@ -18,6 +18,7 @@ const state = {
     apiUrl: '',
     config: '',
   },
+  update: false,
   api:{
     sidebar: ''
   }

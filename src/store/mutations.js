@@ -6,4 +6,7 @@ export default {
   [types.SET_SIDEBAR] (state, apiUrl){
     state.api.sidebar = apiUrl
   },
+  [types.UPDATE] (state){
+    state.update = !state.update
+  },
 }

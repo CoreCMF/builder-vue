@@ -48,3 +48,6 @@ export const getData = ({ commit,state },{apiUrl = state.apiUrl, postData = null
 export const setSidebar = ({ commit,state }, apiUrl) => {
   commit(types.SET_SIDEBAR, apiUrl)
 }
+export const update = ({ commit,state }) => {
+  commit(types.UPDATE)
+}
