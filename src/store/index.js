@@ -21,6 +21,9 @@ const state = {
   update: false,
   api:{
     sidebar: ''
+  },
+  dialog: {
+    apiUrl: null,
   }
 }
 export default new Vuex.Store({
