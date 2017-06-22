@@ -42,6 +42,6 @@ export const setSidebar = ({ commit,state }, apiUrl) => {
 export const update = ({ commit,state }) => {
   commit(types.UPDATE)
 }
-export const dialogApiUrl = ({ commit,state }, apiUrl) => {
-  commit(types.DIALOG_API_URL, apiUrl)
+export const dialog = ({ commit,state }, {apiUrl, postData}) => {
+  commit(types.DIALOG, {apiUrl, postData})
 }

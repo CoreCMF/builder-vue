@@ -9,7 +9,8 @@ export default {
   [types.UPDATE] (state){
     state.update = !state.update
   },
-  [types.DIALOG_API_URL] (state, apiUrl){
-    state.dialog.apiUrl = apiUrl
+  [types.DIALOG] (state, {apiUrl, postData}){
+    state.dialog.apiUrl   = apiUrl
+    state.dialog.postData = postData
   },
 }

@@ -23,6 +23,7 @@ const state = {
     sidebar: ''
   },
   dialog: {
+    postData: null,
     apiUrl: null,
   }
 }
