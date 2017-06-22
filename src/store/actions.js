@@ -38,7 +38,7 @@ export const getData = ({ commit,state },{apiUrl = state.apiUrl, postData = null
       let apiUrl = state.mainData.apiUrl.authCheck
       // 等待三秒验证登陆状态
       setTimeout(() =>  {
-        // getData({ commit,state },{apiUrl, thenFunction})
+        getData({ commit,state },{apiUrl, thenFunction})
       }, 3000);
 
       if (catchFunction) {
