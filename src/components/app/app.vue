@@ -42,9 +42,17 @@ export default {
       }
       // childrenRoutes.push({ path: '*', name:'notFound', component: notFound }) //404页面
       let routes = [
-        // { path: '/admin', component: IndexPage, children: adminChildren },
+        {
+          path: config.loginUrl,
+          name: config.loginRouterNmae,
+          component: this.$store.state.loginPage
+        },
         /* 在容器组件内增加子路由 */
-        { path: config.mainPath, component: this.$store.state.container, children: childrenRoutes },
+        {
+          path: config.mainPath,
+          component: this.$store.state.container,
+          children: childrenRoutes
+        },
       ]
       /* 增加路由 */
       this.$router.addRoutes(routes)
