@@ -27,7 +27,7 @@ const state = {
     postData: null,
     apiUrl: null,
   },
-  requestStatus: true
+  authStatus: true
 }
 export default new Vuex.Store({
   state,
