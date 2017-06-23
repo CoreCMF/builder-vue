@@ -25,22 +25,7 @@ export const getData = ({ commit,state },{apiUrl = state.apiUrl, postData = null
       }
     })
     .catch(function (error) {
-      /**
-       * [thenFunction 如果登录没有成功跳转到登录页面]
-       */
-      let thenFunction = (Response) => {
-        let loginState = Response.data.state
-        let loginRouterNmae = state.mainData.config.loginRouterNmae
-        if (!loginState) {
-          router.push({name:loginRouterNmae})
-        }
-      }
-      let apiUrl = state.mainData.apiUrl.authCheck
-      // 等待三秒验证登陆状态
-      setTimeout(() =>  {
-        getData({ commit,state },{apiUrl, thenFunction})
-      }, 3000);
-
+      commit(types.REQUEST_STATUS, false)
       if (catchFunction) {
         catchFunction(error)
       }

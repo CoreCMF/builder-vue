@@ -13,4 +13,7 @@ export default {
     state.dialog.apiUrl   = apiUrl
     state.dialog.postData = postData
   },
+  [types.REQUEST_STATUS] (state, status){
+    state.requestStatus = status
+  },
 }

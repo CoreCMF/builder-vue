@@ -26,7 +26,8 @@ const state = {
   dialog: {
     postData: null,
     apiUrl: null,
-  }
+  },
+  requestStatus: true
 }
 export default new Vuex.Store({
   state,
