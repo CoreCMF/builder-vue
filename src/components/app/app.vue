@@ -18,7 +18,7 @@ export default {
         /* 设置主通信数据 */
         _this.$store.dispatch('setMainData',mainData)
         /* 初始化路由 */
-        _this.addRoutes(mainData.routes, mainData.config)
+        _this.$router.addRoutes(mainData.routes)
       }
 
       let catchFunction = function(error) {
@@ -29,33 +29,6 @@ export default {
       }
       let apiUrl = this.$store.state.apiUrl
       this.$store.dispatch('getData',{ 'url':apiUrl, thenFunction, catchFunction })
-    },
-    addRoutes(routesPro, config){
-      let childrenRoutes = []
-      for (var key in routesPro) {
-        childrenRoutes.push({
-          name: routesPro[key].name,
-          path: routesPro[key].path,
-          component: this.$store.state.builderIndex,
-          meta: { apiUrl: routesPro[key].apiUrl }
-        })
-      }
-      // childrenRoutes.push({ path: '*', name:'notFound', component: notFound }) //404页面
-      let routes = [
-        {
-          path: config.loginUrl,
-          name: config.loginRouterNmae,
-          component: this.$store.state.loginPage
-        },
-        /* 在容器组件内增加子路由 */
-        {
-          path: config.mainPath,
-          component: this.$store.state.container,
-          children: childrenRoutes
-        },
-      ]
-      /* 增加路由 */
-      this.$router.addRoutes(routes)
     }
   }
 }
