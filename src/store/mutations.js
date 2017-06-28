@@ -6,8 +6,8 @@ export default {
   [types.SET_SIDEBAR] (state, apiUrl){
     state.api.sidebar = apiUrl
   },
-  [types.UPDATE] (state){
-    state.update = !state.update
+  [types.CALLBACK_DATA] (state, data){
+    state.callbackData = data
   },
   [types.DIALOG] (state, {apiUrl, postData}){
     state.dialog.apiUrl   = apiUrl

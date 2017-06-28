@@ -40,8 +40,8 @@ export const getData = ({ commit,state },{apiUrl = state.apiUrl, postData = null
 export const setSidebar = ({ commit,state }, apiUrl) => {
   commit(types.SET_SIDEBAR, apiUrl)
 }
-export const update = ({ commit,state }) => {
-  commit(types.UPDATE)
+export const callbackData = ({ commit,state }, data) => {
+  commit(types.CALLBACK_DATA, data)
 }
 export const dialog = ({ commit,state }, {apiUrl, postData}) => {
   commit(types.DIALOG, {apiUrl, postData})

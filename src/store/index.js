@@ -14,7 +14,7 @@ const state = {
     apiUrl: '',
     config: '',
   },
-  update: false,
+  callbackData: null,
   api:{
     sidebar: ''
   },
