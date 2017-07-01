@@ -46,3 +46,6 @@ export const callbackData = ({ commit,state }, data) => {
 export const dialog = ({ commit,state }, {apiUrl, postData}) => {
   commit(types.DIALOG, {apiUrl, postData})
 }
+export const setPostData = ({ commit,state },{key, value}) => {
+    commit(types.SET_POST_DATA,{key, value})
+}

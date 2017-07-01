@@ -16,4 +16,7 @@ export default {
   [types.AUTH_STATUS] (state, status){
     state.authStatus = status
   },
+  [types.SET_POST_DATA] (state, {key, value}){
+    Vue.set(state.postData, key, value)
+  },
 }
