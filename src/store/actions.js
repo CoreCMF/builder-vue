@@ -49,3 +49,6 @@ export const dialog = ({ commit,state }, {apiUrl, postData}) => {
 export const setPostData = ({ commit,state },{key, value}) => {
     commit(types.SET_POST_DATA,{key, value})
 }
+export const initPostData = ({ commit,state }) => {
+    commit(types.INIT_POST_DATA)
+}
