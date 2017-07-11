@@ -20,8 +20,8 @@ export const getData = ({ commit,state },{apiUrl = state.apiUrl, postData = null
       if (thenFunction) {
         thenFunction(Response)
       }
-      if (message) {
-        MessageInfo(message, Response.data)
+      if (message && Response.data.message) {
+        MessageInfo(message, Response.data.message)
       }
     })
     .catch(function (error) {
