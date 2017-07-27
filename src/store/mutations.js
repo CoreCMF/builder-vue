@@ -13,8 +13,8 @@ export default {
     state.dialog.apiUrl   = apiUrl
     state.dialog.postData = postData
   },
-  [types.AUTH_STATUS] (state, status){
-    state.authStatus = status
+  [types.CALLBACK_ERROR] (state, error){
+    state.callbackError = error
   },
   [types.SET_POST_DATA] (state, {key, value}){
     Vue.set(state.postData, key, value)

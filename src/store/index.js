@@ -17,14 +17,14 @@ const state = {
   },
   postData:{},
   callbackData: null,
+  callbackError: null,
   api:{
     sidebar: ''
   },
   dialog: {
     postData: null,
     apiUrl: null,
-  },
-  authStatus: true
+  }
 }
 export default new Vuex.Store({
   state,

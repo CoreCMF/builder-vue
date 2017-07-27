@@ -25,7 +25,7 @@ export const getData = ({ commit,state },{apiUrl = state.apiUrl, postData = null
       }
     })
     .catch(function (error) {
-      commit(types.AUTH_STATUS, false)
+      commit(types.CALLBACK_ERROR, error)
       if (catchFunction) {
         catchFunction(error)
       }
