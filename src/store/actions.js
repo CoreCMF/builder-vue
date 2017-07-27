@@ -25,9 +25,10 @@ export const getData = ({ commit,state },{apiUrl = state.apiUrl, postData = null
       }
     })
     .catch(function (error) {
-      commit(types.CALLBACK_ERROR, error)
       if (catchFunction) {
         catchFunction(error)
+      }else{
+        commit(types.CALLBACK_ERROR, error)
       }
       if (message) {
         MessageInfo(message, {
