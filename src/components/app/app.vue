@@ -14,7 +14,7 @@ export default {
       let _this = this
 
       let thenFunction = function(Response) {
-        let mainData = Response.data
+        let mainData = Response.data.main
         /* 设置主通信数据 */
         _this.$store.dispatch('setMainData',mainData)
         /* 初始化路由 */
