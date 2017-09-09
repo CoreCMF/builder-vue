@@ -15,7 +15,6 @@ const state = {
     apiUrl: '',
     config: '',
   },
-  postData:{},
   callbackData: null,
   callbackError: null,
   api:{

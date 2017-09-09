@@ -16,10 +16,4 @@ export default {
   [types.CALLBACK_ERROR] (state, error){
     state.callbackError = error
   },
-  [types.SET_POST_DATA] (state, {key, value}){
-    Vue.set(state.postData, key, value)
-  },
-  [types.INIT_POST_DATA] (state){
-    state.postData = {}
-  },
 }
