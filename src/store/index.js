@@ -20,10 +20,7 @@ const state = {
   api:{
     sidebar: ''
   },
-  dialog: {
-    postData: null,
-    apiUrl: null,
-  }
+  dialog: {}
 }
 export default new Vuex.Store({
   state,

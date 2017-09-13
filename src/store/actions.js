@@ -47,3 +47,6 @@ export const callbackData = ({ commit,state }, data) => {
 export const dialog = ({ commit,state }, {apiUrl, postData}) => {
   commit(types.DIALOG, {apiUrl, postData})
 }
+export const deleteDialog = ({ commit,state }, apiUrl) => {
+  commit(types.DELETE_DIALOG, apiUrl)
+}

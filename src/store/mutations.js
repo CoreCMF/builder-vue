@@ -10,8 +10,10 @@ export default {
     state.callbackData = data
   },
   [types.DIALOG] (state, {apiUrl, postData}){
-    state.dialog.apiUrl   = apiUrl
-    state.dialog.postData = postData
+    Vue.set(state.dialog,apiUrl,postData)
+  },
+  [types.DELETE_DIALOG] (state, apiUrl){
+    Vue.delete(state.dialog,apiUrl)
   },
   [types.CALLBACK_ERROR] (state, error){
     state.callbackError = error
