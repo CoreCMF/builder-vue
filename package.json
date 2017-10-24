@@ -1,6 +1,6 @@
 {
   "name": "builder-vue",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "自动构建vue页面\"",
   "main": "./src/index.js",
   "scripts": {
