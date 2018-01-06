@@ -8,7 +8,7 @@ Vue.use(Vuex)
 
 const state = {
   /* 设置api通信url */
-  apiUrl: '',
+  apiUrl: window.config.apiUrl,
   /* 后端主要配置数据 */
   mainData:{
     routes: '',
