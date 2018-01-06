@@ -3,6 +3,8 @@ import App from './components/app'
 import router from './router'
 import store from './store'
 import 'font-awesome/css/font-awesome.css'
+
+Vue.config.productionTip = false
 //注册全局
 window.axios = require('axios')
 window.Vue = Vue
@@ -13,8 +15,17 @@ window.axios.defaults.headers.common = {
   'X-Requested-With': 'XMLHttpRequest'
 }
 
-export {
+export default {
+  start (){
+    new Vue({
+      el: '#app',
+      router,
+      store,
+      render: h => h(App)
+    })
+  },
+  Vue,
   App,
   router,
-  store
+  store,
 }
