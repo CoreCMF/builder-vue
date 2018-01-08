@@ -12,7 +12,6 @@ export default {
     /* [initMainData 通过apiUrl通信获取数据] */
     initMainData () {
       let _this = this
-
       let thenFunction = function(Response) {
         let mainData = Response.data.main
         /* 设置主通信数据 */
@@ -20,7 +19,6 @@ export default {
         /* 初始化路由 */
         _this.$router.addRoutes(mainData.routes)
       }
-
       let catchFunction = function(error) {
         console.log('%c 获取主配置信息失败! ', 'background: #222; color: #bada55')
         console.log('%c 请检查模板文件window.config.apiUrl配置参数是否正确,或者服务端是否通信正常。 ', 'background: #222; color: #bada55')

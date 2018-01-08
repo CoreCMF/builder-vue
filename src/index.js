@@ -1,11 +1,31 @@
+import Vue from 'vue'
 import App from './components/app'
 import router from './router'
 import store from './store'
 import 'font-awesome/css/font-awesome.css'
 
+Vue.config.productionTip = false
+//注册全局
+window.axios = require('axios')
+window.Vue = Vue
 window.router = router
-export {
+//配置axios请求头部
+window.axios.defaults.headers.common = {
+  'X-CSRF-TOKEN': window.config.csrfToken,
+  'X-Requested-With': 'XMLHttpRequest'
+}
+
+export default {
+  start (){
+    new Vue({
+      el: '#app',
+      router,
+      store,
+      render: h => h(App)
+    })
+  },
+  Vue,
   App,
   router,
-  store
+  store,
 }
