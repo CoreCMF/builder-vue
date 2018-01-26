@@ -12,6 +12,12 @@ export default {
   [types.DIALOG] (state, {apiUrl, postData}){
     Vue.set(state.dialog,apiUrl,postData)
   },
+
+  [types.DIALOGWIDTH] (state, width){
+     if (!_.isEmpty(width)) {
+         state.dialogWidth = width
+     }
+  },
   [types.DELETE_DIALOG] (state, apiUrl){
     Vue.delete(state.dialog,apiUrl)
   },
