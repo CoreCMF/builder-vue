@@ -20,7 +20,8 @@ const state = {
   api:{
     sidebar: ''
   },
-  dialog: {}
+  dialog: {},
+  dialogWidth: '61.8%'
 }
 export default new Vuex.Store({
   state,
