@@ -10,12 +10,6 @@ window.axios = require('axios')
 window._ = require('lodash')
 window.Vue = Vue
 window.router = router
-//配置axios请求头部
-window.axios.defaults.headers.common = {
-  'X-CSRF-TOKEN': window.config.csrfToken,
-  'X-Requested-With': 'XMLHttpRequest'
-}
-window.axios.defaults.withCredentials=true
 
 export default {
   start (){

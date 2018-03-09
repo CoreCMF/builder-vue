@@ -15,7 +15,16 @@ export const MessageInfo = (message, data) => {
 }
 /* 公共post请求方法 */
 export const getData = ({ commit,state },{apiUrl = state.apiUrl, postData = null, thenFunction = null, catchFunction = null, message = null}) => {
-    window.axios.post(apiUrl,postData,{withCredentials:true})
+    let token_type = localStorage.getItem('token_type')
+    let access_token = localStorage.getItem('access_token')
+    let refresh_token = localStorage.getItem('refresh_token')
+    window.axios.post(apiUrl,postData,{
+        withCredentials:true,
+        headers: {
+          'Accept': 'application/json',
+          'Authorization': token_type + ' ' + access_token
+        },
+    })
     .then((Response) => {
       if (thenFunction) {
         thenFunction(Response)
