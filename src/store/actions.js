@@ -19,7 +19,6 @@ export const getData = ({ commit,state },{apiUrl = state.apiUrl, postData = null
     let access_token = localStorage.getItem('access_token')
     let refresh_token = localStorage.getItem('refresh_token')
     window.axios.post(apiUrl,postData,{
-        withCredentials:true,
         headers: {
           'Accept': 'application/json',
           'Authorization': token_type + ' ' + access_token
