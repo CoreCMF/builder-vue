@@ -26,7 +26,7 @@ export default {
         console.log(error)
       }
       let apiUrl = this.$store.state.apiUrl
-      this.$store.dispatch('getData',{ 'url':apiUrl, thenFunction, catchFunction })
+      this.$store.dispatch('getData',{ apiUrl, thenFunction, catchFunction })
     }
   }
 }
