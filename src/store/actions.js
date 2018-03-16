@@ -1,4 +1,5 @@
 import * as types from './mutation-types'
+import { Message } from 'element-ui'
 
 /**
  * [setMainData 设置主通信数据]
@@ -7,14 +8,8 @@ import * as types from './mutation-types'
 export const setMainData = ({ commit,state },mainData) => {
   commit(types.SET_MAIN_DATA,mainData)
 }
-export const MessageInfo = (message, data) => {
-  message({
-    message: data.message,
-    type: data.type,
-  })
-}
 /* 公共post请求方法 */
-export const getData = ({ commit,state },{apiUrl = state.apiUrl, postData = null, thenFunction = null, catchFunction = null, message = null}) => {
+export const getData = ({ commit,state },{apiUrl = state.apiUrl, postData = null, thenFunction = null, catchFunction = null}) => {
     let token_type = localStorage.getItem('token_type')
     let access_token = localStorage.getItem('access_token')
     let refresh_token = localStorage.getItem('refresh_token')
@@ -28,21 +23,25 @@ export const getData = ({ commit,state },{apiUrl = state.apiUrl, postData = null
       if (thenFunction) {
         thenFunction(Response)
       }
-      if (message && Response.data.message) {
-        MessageInfo(message, Response.data.message)
+      let message = Response.data.message
+      if (message) {
+          Message({
+              message: message.message,
+              type: message.type,
+          })
       }
     })
-    .catch(function (error) {
+    .catch((error) => {
       if (catchFunction) {
         catchFunction(error)
       }else{
         commit(types.CALLBACK_ERROR, error)
-      }
-      if (message) {
-        MessageInfo(message, {
-            message: '操作失败请联系管理员！',
-            type: 'error',
-        })
+        // console.log(error)
+        // console.log(error.message)
+        // console.log(error.config)
+        // console.log(error.code)
+        // console.log(error.request)
+        console.log(error.response)
       }
     })
 }
